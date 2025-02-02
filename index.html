@@ -13,6 +13,14 @@
             height: 100vh;
             margin: 0;
         }
+        .menu-icon {
+            position: fixed;
+            left: 10px;
+            top: 20px;
+            font-size: 30px;
+            cursor: pointer;
+            z-index: 1000;
+        }
         .sidebar {
             width: 250px;
             background-color: #3A0066;
@@ -20,6 +28,8 @@
             text-align: left;
             position: fixed;
             height: 100%;
+            left: -250px;
+            transition: 0.3s;
         }
         .sidebar img {
             width: 100%;
@@ -41,7 +51,7 @@
             background-color: #5A007A;
         }
         .content-container {
-            margin-left: 270px;
+            margin-left: 20px;
             padding: 20px;
             flex: 1;
         }
@@ -55,13 +65,19 @@
             margin-top: 20px;
             text-align: center;
         }
+        .sidebar:hover {
+            left: 0;
+        }
     </style>
 </head>
 <body>
+    <div class="menu-icon">☰</div>
     <div class="sidebar">
         <img src="your-photo.jpg" alt="Your Photo">
         <button class="tab" onclick="showTab('stem')">STEM Tutoring</button>
         <button class="tab" onclick="showTab('music')">Guitar Lessons</button>
+        <p>Email me at: <a href="mailto:hernandez4855@gmail.com" style="color: white;">hernandez4855@gmail.com</a></p>
+        <p>Call me at: <span style="color: white;">469-233-1862</span></p>
     </div>
     
     <div class="content-container">
@@ -93,8 +109,6 @@
                 Your browser does not support the video tag.
             </video>
         </div>
-        
-        <p>Contact me at <a href="mailto:hernandez4855@gmail.com" style="color: white;">hernandez4855@gmail.com</a></p>
     </div>
     
     <script>
