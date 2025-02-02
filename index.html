@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #4B0082; /* Royal Purple */
+            background: linear-gradient(to bottom, #2E0055, #4B0082); /* Darker Royal Purple Gradient */
             color: white;
             display: flex;
             height: 100vh;
@@ -22,13 +22,13 @@
             z-index: 1000;
         }
         .sidebar {
-            width: 250px;
-            background-color: #3A0066;
+            width: 280px; /* 15% Wider */
+            background: linear-gradient(to bottom, #250044, #3A0066);
             padding: 20px;
             text-align: left;
             position: fixed;
             height: 100%;
-            left: -250px;
+            left: -280px;
             transition: 0.3s;
         }
         .sidebar img {
@@ -51,7 +51,7 @@
             background-color: #5A007A;
         }
         .content-container {
-            margin-left: 20px;
+            margin-left: 300px; /* Increased space between sidebar and content */
             padding: 20px;
             flex: 1;
         }
