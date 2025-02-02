@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom, #2E0055, #4B0082); /* Darker Royal Purple Gradient */
+            background: linear-gradient(to bottom, #250044, #3A0066); /* Darker Royal Purple Gradient */
             color: white;
             display: flex;
             height: 100vh;
@@ -22,19 +22,14 @@
             z-index: 1000;
         }
         .sidebar {
-            width: 280px; /* 15% Wider */
-            background: linear-gradient(to bottom, #250044, #3A0066);
+            width: 240px; /* 5% Less Wide */
+            background: linear-gradient(to bottom, #20003A, #350055);
             padding: 20px;
             text-align: left;
             position: fixed;
             height: 100%;
-            left: -280px;
+            left: -240px;
             transition: 0.3s;
-        }
-        .sidebar img {
-            width: 100%;
-            border-radius: 10px;
-            margin-bottom: 20px;
         }
         .tab {
             display: block;
@@ -51,9 +46,10 @@
             background-color: #5A007A;
         }
         .content-container {
-            margin-left: 300px; /* Increased space between sidebar and content */
+            margin-left: 260px; /* Adjusted left margin to match sidebar width */
             padding: 20px;
             flex: 1;
+            position: relative;
         }
         .content {
             display: none;
@@ -68,12 +64,18 @@
         .sidebar:hover {
             left: 0;
         }
+        .profile-image {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 150px;
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body>
     <div class="menu-icon">☰</div>
     <div class="sidebar">
-        <img src="your-photo.jpg" alt="Your Photo">
         <button class="tab" onclick="showTab('stem')">STEM Tutoring</button>
         <button class="tab" onclick="showTab('music')">Guitar Lessons</button>
         <p>Email me at: <a href="mailto:hernandez4855@gmail.com" style="color: white;">hernandez4855@gmail.com</a></p>
@@ -81,6 +83,7 @@
     </div>
     
     <div class="content-container">
+        <img src="your-photo.jpg" alt="Your Photo" class="profile-image">
         <h1>Welcome to Personalized Tutoring & Guitar Lessons</h1>
         <div id="stem" class="content active">
             <h2>STEM Tutoring</h2>
