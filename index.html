@@ -5,39 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tutoring & Music Lessons</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; }
-        .tab { cursor: pointer; padding: 10px; margin: 5px; display: inline-block; border: 1px solid #000; }
-        .content { display: none; padding: 20px; border-top: 2px solid #000; }
-        .active { display: block; }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #4B0082; /* Royal Purple */
+            color: white;
+            display: flex;
+            height: 100vh;
+            margin: 0;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #3A0066;
+            padding: 20px;
+            text-align: left;
+            position: fixed;
+            height: 100%;
+        }
+        .sidebar img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .tab {
+            display: block;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 18px;
+            padding: 10px;
+            cursor: pointer;
+            text-align: left;
+            width: 100%;
+        }
+        .tab:hover {
+            background-color: #5A007A;
+        }
+        .content-container {
+            margin-left: 270px;
+            padding: 20px;
+            flex: 1;
+        }
+        .content {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        .video-container {
+            margin-top: 20px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
-    <h1>Personalized Tutoring & Guitar Lessons</h1>
-    <div>
-        <span class="tab" onclick="showTab('stem')">STEM Tutoring</span>
-        <span class="tab" onclick="showTab('music')">Guitar Lessons</span>
+    <div class="sidebar">
+        <img src="your-photo.jpg" alt="Your Photo">
+        <button class="tab" onclick="showTab('stem')">STEM Tutoring</button>
+        <button class="tab" onclick="showTab('music')">Guitar Lessons</button>
     </div>
     
-    <div id="stem" class="content active">
-        <h2>STEM Tutoring</h2>
-        <p>Math, Science, Economics, and Business tutoring for grades 7-12 and college-level students.</p>
-        <p><strong>Subjects:</strong></p>
-        <ul>
-            <li>Math: Pre-Algebra to Differential Equations</li>
-            <li>Science: Chemistry & Physics</li>
-            <li>Economics & Finance</li>
-            <li>Data Analytics: Excel, Python, VBA</li>
-        </ul>
-        <p><strong>Pricing:</strong> $15/30 min | $25/hour | Group: $25 + $5/person per hour</p>
+    <div class="content-container">
+        <h1>Welcome to Personalized Tutoring & Guitar Lessons</h1>
+        <div id="stem" class="content active">
+            <h2>STEM Tutoring</h2>
+            <p>Math, Science, Economics, and Business tutoring for grades 7-12 and college-level students.</p>
+            <p><strong>Subjects:</strong></p>
+            <ul>
+                <li>Math: Pre-Algebra to Differential Equations</li>
+                <li>Science: Chemistry & Physics</li>
+                <li>Economics & Finance</li>
+                <li>Data Analytics: Excel, Python, VBA</li>
+            </ul>
+            <p><strong>Pricing:</strong> $15/30 min | $25/hour | Group: $25 + $5/person per hour</p>
+        </div>
+        
+        <div id="music" class="content">
+            <h2>Guitar Lessons</h2>
+            <p>Learn to play guitar with personalized lessons for all skill levels.</p>
+            <p><strong>Pricing:</strong> Contact for details.</p>
+        </div>
+        
+        <div class="video-container">
+            <h2>About Me</h2>
+            <p>Watch this short introduction to learn more about my tutoring style and experience.</p>
+            <video width="80%" controls>
+                <source src="your-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        
+        <p>Contact me at <a href="mailto:hernandez4855@gmail.com" style="color: white;">hernandez4855@gmail.com</a></p>
     </div>
     
-    <div id="music" class="content">
-        <h2>Guitar Lessons</h2>
-        <p>Learn to play guitar with personalized lessons for all skill levels.</p>
-        <p><strong>Pricing:</strong> Contact for details.</p>
-    </div>
-    
-    <p>Contact me at <a href="mailto:hernandez4855@gmail.com">hernandez4855@gmail.com</a></p>
     <script>
         function showTab(tab) {
             document.querySelectorAll('.content').forEach(div => div.classList.remove('active'));
