@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom, #250044, #3A0066); /* Darker Royal Purple Gradient */
+            background: linear-gradient(to bottom, #250044, #3A0066);
             color: white;
             display: flex;
             flex-direction: column;
@@ -26,13 +26,16 @@
         .sidebar {
             width: 240px;
             background: linear-gradient(to bottom, #20003A, #350055);
-            padding: 80px 20px 20px; /* Increased top padding to move text further down */
+            padding: 80px 20px 20px;
             text-align: left;
             position: fixed;
             height: 100%;
             left: -240px;
             transition: 0.3s;
-            z-index: 1100; /* Ensures sidebar stays above other content */
+            z-index: 1100;
+        }
+        .sidebar:hover {
+            left: 0;
         }
         .sidebar.open {
             left: 0;
@@ -52,7 +55,7 @@
             background-color: #5A007A;
         }
         .content-container {
-            margin: 80px auto 20px auto; /* Centering content */
+            margin: 80px auto 20px auto;
             padding: 20px;
             flex: 1;
             position: relative;
@@ -76,7 +79,7 @@
             display: block;
             margin: 0 auto 20px;
             position: relative;
-            left: -30px; /* Shift image slightly more to the left */
+            left: -30px;
         }
         @media (max-width: 768px) {
             body {
@@ -86,19 +89,26 @@
             .content-container {
                 margin: 20px;
                 padding: 10px;
-                text-align: left; /* Aligning text to the left for better readability */
+                text-align: left;
             }
             .profile-image {
                 position: relative;
                 top: auto;
                 right: auto;
-                left: -20px; /* Adjusted for better placement */
+                left: -20px;
                 display: block;
                 margin: 10px auto 20px auto;
             }
             .sidebar {
-                background: #20003A; /* Remove transparency on mobile */
+                background: #20003A;
                 left: -240px;
+                transition: 0.3s;
+            }
+            .sidebar:hover {
+                left: -240px;
+            }
+            .sidebar.open {
+                left: 0;
             }
         }
     </style>
