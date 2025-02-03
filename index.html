@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -26,12 +26,13 @@
         .sidebar {
             width: 240px;
             background: linear-gradient(to bottom, #20003A, #350055);
-            padding: 60px 20px 20px;
+            padding: 80px 20px 20px; /* Increased top padding to move text further down */
             text-align: left;
             position: fixed;
             height: 100%;
             left: -240px;
             transition: 0.3s;
+            z-index: 1100; /* Ensures sidebar stays above other content */
         }
         .tab {
             display: block;
@@ -75,7 +76,7 @@
             display: block;
             margin: 0 auto 20px;
             position: relative;
-            left: -20px; /* Shift image slightly to the left */
+            left: -80px; /* Shift image slightly more to the left */
         }
         @media (max-width: 768px) {
             body {
@@ -91,12 +92,13 @@
                 position: relative;
                 top: auto;
                 right: auto;
-                left: -10px; /* Adjusted for better placement */
+                left: -20px; /* Adjusted for better placement */
                 display: block;
                 margin: 10px auto 20px auto;
             }
             .sidebar {
                 background: #20003A; /* Remove transparency on mobile */
+                left: 0; /* Ensure it stays above the content */
             }
         }
     </style>
