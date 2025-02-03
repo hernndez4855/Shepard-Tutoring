@@ -17,7 +17,7 @@
         }
         .menu-icon {
             position: fixed;
-            left: 10px;
+            left: 20px; /* Moved to the right */
             top: 20px;
             font-size: 30px;
             cursor: pointer;
@@ -34,7 +34,7 @@
             text-align: left;
             position: fixed;
             height: 100%;
-            left: -240px;
+            left: -260px; /* Adjusted for mobile overlap */
             transition: 0.3s;
             z-index: 1100;
         }
@@ -56,6 +56,9 @@
             background-color: #5A007A;
         }
         .content-container {
+            display: flex; /* Flexbox for alignment */
+            flex-direction: column;
+            align-items: flex-end; /* Align to the right */
             margin: 80px auto 20px auto;
             padding: 20px;
             flex: 1;
@@ -78,36 +81,43 @@
             max-width: 150px;
             border-radius: 10px;
             display: block;
-            margin: 0 auto 20px;
-            position: relative;
-            left: -50px;
+            margin-left: auto; /* Push to the right */
+            margin-right: 0;
+            left: 0; /* Remove previous offset */
         }
+
+        .content-container > *:not(.profile-image) {
+            align-self: flex-start; /* Align content to the left */
+            width: 100%;
+        }
+
         @media (max-width: 768px) {
             body {
                 flex-direction: column;
                 align-items: center;
             }
             .content-container {
+                flex-direction: column;
+                align-items: center; /* Center on mobile */
                 margin: 20px;
                 padding: 10px;
                 text-align: left;
             }
             .profile-image {
-                position: relative;
-                top: auto;
-                right: auto;
-                left: -30px;
-                display: block;
-                margin: 10px auto 20px auto;
+                margin: 10px auto 20px auto; /* Center image on mobile */
+                left: 0;
             }
             .sidebar {
                 background: #20003A;
-                left: -260px; /* Increased left margin */
-                padding: 20px; /* Added padding to create a bit of space */
+                left: -260px; /* Adjusted for mobile */
                 transition: 0.3s;
             }
             .sidebar.open {
                 left: 0;
+            }
+            .content-container > *:not(.profile-image){
+                align-self: center;
+                width: auto;
             }
         }
         #overlay {
