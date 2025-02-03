@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -34,6 +34,9 @@
             transition: 0.3s;
             z-index: 1100; /* Ensures sidebar stays above other content */
         }
+        .sidebar.open {
+            left: 0;
+        }
         .tab {
             display: block;
             background: none;
@@ -66,9 +69,6 @@
             margin-top: 20px;
             text-align: center;
         }
-        .sidebar:hover {
-            left: 0;
-        }
         .profile-image {
             width: 100%;
             max-width: 150px;
@@ -76,7 +76,7 @@
             display: block;
             margin: 0 auto 20px;
             position: relative;
-            left: -80px; /* Shift image slightly more to the left */
+            left: -30px; /* Shift image slightly more to the left */
         }
         @media (max-width: 768px) {
             body {
@@ -98,14 +98,14 @@
             }
             .sidebar {
                 background: #20003A; /* Remove transparency on mobile */
-                left: 0; /* Ensure it stays above the content */
+                left: -240px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="menu-icon">☰</div>
-    <div class="sidebar">
+    <div class="menu-icon" onclick="toggleSidebar()">☰</div>
+    <div class="sidebar" id="sidebar">
         <button class="tab" onclick="showTab('stem')">STEM Tutoring</button>
         <button class="tab" onclick="showTab('music')">Guitar Lessons</button>
         <p>Questions and bookings: <span style="color: white;"></p>
@@ -152,6 +152,11 @@
         function showTab(tab) {
             document.querySelectorAll('.content').forEach(div => div.classList.remove('active'));
             document.getElementById(tab).classList.add('active');
+        }
+        
+        function toggleSidebar() {
+            var sidebar = document.getElementById("sidebar");
+            sidebar.classList.toggle("open");
         }
     </script>
 </body>
